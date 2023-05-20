@@ -4,10 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="/dist/output.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+
 </head>
-<body>
-  <h1 class="text-3xl font-bold underline bg-red-500">
-    Hello world!
-  </h1>
+<body >
+    <div x-data="{ open: false }">
+        <button @click="open = ! open">Expand</button>
+     
+        <div x-show="open" class="bg-red-400">
+            Content...
+        </div>
+    </div>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+
 </body>
 </html>
