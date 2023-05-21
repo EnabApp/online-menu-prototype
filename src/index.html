@@ -9,15 +9,37 @@
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
 
 </head>
-<body >
-    <div x-data="{ open: false }">
-        <button @click="open = ! open" class="btn">Expand</button>
-     
-        <div x-show="open" class="bg-red-400">
-            <button class="btn btn-primary">Button</button>
+<body class="bg-slate-400">
+    <main class="flex justify-center">
+        <div class="artboard phone-3 bg-red-400 h-screen">
+            <div class="navbar bg-base-100">
+                <div class="flex-1 items-center">
+                    <div class="w-12 rounded-xl">
+                        <img src="../src/img/image 24.png" />
+                      </div>
+                  <a class="btn btn-ghost normal-case text-xl">مطعم كفس</a>
+                </div>
+                <div class="flex justify-between gap-2">
+                  <div>
+                    <label tabindex="0" class="btn">
+                      <div class="indicator">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+                        <span class="badge badge-sm indicator-item">8</span>
+                      </div>
+                    </label>
+                    
+                  </div>
+                  <div >
+                    <label tabindex="0" class="avatar">
+                      <div class="w-10 rounded-xl">
+                        <img src="../src/img/image 22.png" />
+                      </div>
+                    </label>
+                    
+                  </div>
+                </div>
+              </div>
         </div>
-    </div>
-    
-
+    </main>
 </body>
 </html>
