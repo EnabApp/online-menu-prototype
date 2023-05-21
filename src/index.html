@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="../dist/output.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@2.51.6/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
   <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
 
 </head>
@@ -12,8 +14,10 @@
         <button @click="open = ! open" class="btn">Expand</button>
      
         <div x-show="open" class="bg-red-400">
-            Content...
+            <button class="btn btn-primary">Button</button>
         </div>
     </div>
+    
+
 </body>
 </html>
