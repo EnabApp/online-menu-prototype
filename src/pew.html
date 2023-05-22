@@ -1,0 +1,65 @@
+!<!doctype html>
+<html data-theme="light" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="/dist/output.css" rel="stylesheet"/>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+<script src="js/cart.js"></script>
+</head>
+<body class="bg-slate-400">
+
+<div x-data="ProductComponent()">
+  <template x-if="loading">
+    <p>Loading...</p>
+  </template>
+
+  <template x-if="error">
+    <p>Error: {{ error }}</p>
+  </template>
+
+  <template x-if="products">
+    <div>
+	    <h2>Products:</h2>
+	    <ul>
+	      <template x-for="product in products" :key="product.id">
+	      	<div>
+	      		<img :src="product.image">
+	      		<li x-text="product.title"></li>
+	      	</div>
+	      </template>
+	    </ul>
+	</div>
+  </template>
+</div>
+
+<script>
+function ProductComponent() {
+  return {
+    products: null,
+    loading: true,
+    error: null,
+
+    fetchProducts() {
+      fetch('https://fakestoreapi.com/products')
+        .then(response => response.json())
+        .then(data => {
+          this.products = data;
+          this.loading = false;
+        })
+        .catch(error => {
+          this.error = error.message;
+          this.loading = false;
+        });
+    },
+
+    init() {
+      this.fetchProducts();
+    }
+  };
+}
+</script>
+
+
+</body>
+</html>

@@ -2,6 +2,9 @@
   "devDependencies": {
     "tailwindcss": "^3.3.2"
   },
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./dist/output.css --watch"
+  },
   "dependencies": {
     "daisyui": "^2.51.6"
   }
